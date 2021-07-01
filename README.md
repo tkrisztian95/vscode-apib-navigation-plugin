@@ -1,0 +1,1 @@
+# vscode-apib-navigation-plugin
