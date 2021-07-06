@@ -1,4 +1,4 @@
-# vscode-apib-navigation-plugin README
+# vscode-apib-navigation-plugin
 
 VS Code extension for API Blueprint files.
 
@@ -18,7 +18,7 @@ No requirements or dependencies to use this extension.
 
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
+* None
 
 ## Known Issues
 
