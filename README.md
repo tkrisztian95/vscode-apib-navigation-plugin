@@ -2,8 +2,6 @@
 
 VS Code extension for API Blueprint files.
 
-- [Get it from Marketplace](https://marketplace.visualstudio.com/items?itemName=ktothdev.ktoth-apib-navigation)
-
 It helps you to navigate in large API doc files easier using the VS Code Outline view. This extension adds the sections of the API doc to the Outline view in a hierarchical tree structure. On clicking an item in the tree will quickly jump the cursor to the line in the active editor tab where editing the `.apib` file.
 
 ## Features
@@ -48,4 +46,4 @@ Initial release of this extension...
 ## Useful links
 
 - [API Blueprint Specification](https://apiblueprint.org/documentation/specification.html)
-
+- [Get it from Marketplace](https://marketplace.visualstudio.com/items?itemName=ktothdev.apib-navigation)
