@@ -9,11 +9,6 @@ const vscode = require('vscode');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "ktoth-apib-navigation" is now active!');
-
 	context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(
 		{ scheme: "file", language: "apiblueprint" }, new ApibConfigDocumentSymbolProvider()
 	))
@@ -28,32 +23,6 @@ module.exports = {
 	deactivate
 }
 
-/**
- * 
- * # Node 1 
- * 	## Node 2
- * 		### Node 3
- * 		### Node 3
- * 	## Node 2
- * 		### Node 3
- * 		### Node 3
- * 	## Node 2
- * 
- * # Node 1
- * 	## Node 2
- *  + Request
- *  + Request
- * 		### Node 3
- *  + Request
- *	 		#### Node 4
- *  + Request
- *	 		#### Node 4
- *      ### Node 3
- *      ### Node 3
- * 	## Node 2
- *	## Node 2
- * 	## Node 2 
- */
 var ApibConfigDocumentSymbolProvider = /** @class */ (function () {
 	function ApibConfigDocumentSymbolProvider() {
 	}
