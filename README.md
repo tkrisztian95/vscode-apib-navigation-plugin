@@ -28,6 +28,6 @@ There are no known issues, yet.
 
 Users appreciate release notes, so here is some:
 
-### 1.0.0
+### 0.0.1
 
 Initial release of this extension, coming soon...
