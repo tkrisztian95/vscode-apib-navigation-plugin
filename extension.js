@@ -54,18 +54,28 @@ var ApibConfigDocumentSymbolProvider = /** @class */ (function () {
 	function ApibConfigDocumentSymbolProvider() {
 	}
 
-	function getChildren(parentIdx, symbols, nodes) {
+	function getSymbolRank(symbol) {
+		return symbol.name.split(" ", 1)[0].length;
+	}
+
+	function isRootSymbol(symbol) {
+		var rank = getSymbolRank(symbol);
+		return rank === 1;
+	}
+
+	function findChildNodes(parentIdx, symbols) {
+		var nodes = [];
+		var parentRank = getSymbolRank(symbols[parentIdx]);
 		for (var j = parentIdx + 1; j < symbols.length; j++) {
-			var parentRank = symbols[parentIdx].name.split(" ", 1)[0].length;
-			var nextRank = symbols[j].name.split(" ", 1)[0].length;
-			//Child
+			var nextRank = getSymbolRank(symbols[j]);
 			if (parentRank + 1 == nextRank) {
-				nodes.push(symbols[j]);
+				nodes.push(symbols[j]); //Node is a child
 			}
 			if (nextRank <= parentRank) {
-				return;
+				break; // No more child
 			}
 		}
+		return nodes;
 	}
 
 	ApibConfigDocumentSymbolProvider.prototype.provideDocumentSymbols = function (document, token) {
@@ -82,19 +92,19 @@ var ApibConfigDocumentSymbolProvider = /** @class */ (function () {
 
 			for (var i = 0; i < symbols.length; i++) {
 				var childs = [];
-				getChildren(i, symbols, childs);
+				childs = findChildNodes(i, symbols);
 				for (var j = 0; j < childs.length; j++) {
 					symbols[i].children.push(childs[j]);
 				}
 			}
 
 			var roots = [];
-			for (var i = 0; i < symbols.length; i++) {
-				var rank = symbols[i].name.split(" ", 1)[0].length;
-				if (rank === 1) {
-					roots.push(symbols[i]);
+			symbols.forEach(symbol => {
+				if (isRootSymbol(symbol)) {
+					roots.push(symbol);
 				}
-			}
+			});
+
 			resolve(roots);
 		});
 	};
