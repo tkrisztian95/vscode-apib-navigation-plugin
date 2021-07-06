@@ -17,7 +17,7 @@ Works with:
   - Object: `## <named-type> (object)`
   - Enum: `## <named-type> (enum)`
 
-![Outline](images/screenshot-1.png)
+![Outline](https://github.com/tkrisztian95/vscode-apib-navigation-plugin/blob/main/images/screenshot-1.png?raw=true)
 
 ## Requirements
 
