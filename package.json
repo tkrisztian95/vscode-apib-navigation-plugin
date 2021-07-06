@@ -1,6 +1,7 @@
 {
 	"name": "ktoth-apib-navigation",
 	"displayName": "apib-navigation",
+	"publisher": "ktothdev",
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
