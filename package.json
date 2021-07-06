@@ -1,6 +1,6 @@
 {
-	"name": "ktoth-apib-navigation",
-	"displayName": "apib-navigation",
+	"name": "apib-navigation",
+	"displayName": "API Blueprint Navigation helper",
 	"publisher": "ktothdev",
 	"description": "VS Code Outline navigation view support for API Blueprint (.apib) files.",
 	"version": "0.0.1",
