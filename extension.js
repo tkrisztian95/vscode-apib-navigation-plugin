@@ -117,8 +117,8 @@ var ApibConfigDocumentSymbolProvider = /** @class */ (function () {
 		return nodes;
 	}
 
-	ApibConfigDocumentSymbolProvider.prototype.provideDocumentSymbols = function (document, token) {
-		return new Promise(function (resolve, reject) {
+	ApibConfigDocumentSymbolProvider.prototype.provideDocumentSymbols = function (document) {
+		return new Promise(function (resolve) {
 			vscode.DocumentSymbol
 			var symbols = [];
 			for (var i = 0; i < document.lineCount; i++) {
