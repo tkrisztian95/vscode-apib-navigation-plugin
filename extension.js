@@ -86,6 +86,15 @@ var ApibConfigDocumentSymbolProvider = /** @class */ (function () {
 				var line = document.lineAt(i);
 				if (line.text.startsWith("#")) {
 					var symbol = new vscode.DocumentSymbol(line.text, 'Component', vscode.SymbolKind.Package, line.range, line.range);
+					
+					if (line.text.includes("(object)")) {
+						symbol.kind = vscode.SymbolKind.Class;
+					}
+
+					if (line.text.includes("(enum)")) {
+						symbol.kind = vscode.SymbolKind.Enum;
+					}
+					
 					symbols.push(symbol);
 				}
 			}
