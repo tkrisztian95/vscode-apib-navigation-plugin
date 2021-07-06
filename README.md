@@ -6,7 +6,16 @@ It helps you to navigate in large API doc files easier using the VS Code Outline
 
 ## Features
 
-Add hierarchical document tree in the VS Code Outline view:
+Add hierarchical document tree in the VS Code Outline view.
+
+Works with:
+
+- Sections: `# <identifier>`
+  - Nested sections
+- Requests: `+ Request <identifier>`
+- Data Structures
+  - Object: `## <named-type> (object)`
+  - Enum: `## <named-type> (enum)`
 
 ![Outline](images/screenshot-1.png)
 
